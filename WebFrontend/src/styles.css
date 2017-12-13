@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100% }
+.container-fluid {
+  height: 100%;
+}
+
+.container-fluid > .row {
+  height: 100%;
+  padding: 0 !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#sidebar {
+  height: 100%;
+  border-right: 1px solid rgba(0,0,0,.125);
+  background-color: #3f4142
+}
+
+#sidebar a {
+  color: white;
+}
+
+#sidebar a:hover {
+  font-weight: bold;
+}
+
+#sidebar .list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #696b6c !important;
+  border: none !important;
+}
+.list-group-item {
+  background: none !important;
+}

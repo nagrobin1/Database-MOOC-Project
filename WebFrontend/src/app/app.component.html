@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Trainly</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script></head>
+<body>
+<nav class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand" href="#">Trainly</a>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 sidebar-offcanvas nopadding" id="sidebar">
+        <a routerLink="/registerUser" routerLinkActive="active" class="list-group-item">Register User</a>
+        <a routerLink="/AuthenticateFacultyComponent" routerLinkActive="active" class="list-group-item">Authenticate Faculty/Admin</a>
+        <a routerLink="/ListStudentCoursesComponent" routerLinkActive="active" class="list-group-item">List student's courses</a>
+        <a routerLink="/EnrollComponent" routerLinkActive="active" class="list-group-item">Enroll student in course</a>
+        <a routerLink="/ListCourseMaterialsComponent" routerLinkActive="active" class="list-group-item">List course materials for a student</a>
+        <a routerLink="/ListCourseMaterialsComponent" routerLinkActive="active" class="list-group-item">Mark material as finished</a>
+        <a routerLink="/CertificateComponent" routerLinkActive="active" class="list-group-item">Certificate of completion</a>
+        <a routerLink="/AccountHistoryComponent" routerLinkActive="active" class="list-group-item">User account history</a>
+        <a routerLink="/TopicOfInterest" routerLinkActive="active" class="list-group-item">Topic of Interest</a>
+        <a routerLink="/PopularCourses" routerLinkActive="active" class="list-group-item">Popular Courses</a>
+        <a routerLink="/DifficultQuizQuestionTopic" routerLinkActive="active" class="list-group-item">Difficult Quiz Question/Topic</a>
+        <a routerLink="/EnrollmentSummary" routerLinkActive="active" class="list-group-item">Course-Topic Enrollment Summary for a semester</a>
+        <a routerLink="/FavouriteQuestion" routerLinkActive="active" class="list-group-item">Favourite questions</a>
+    </div>
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+</body>
+</html>

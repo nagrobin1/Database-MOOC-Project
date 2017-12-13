@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12">
+    <b>Select a course:</b>
+    <br/>
+    <select class="custom-select" #selectedCourse>
+      <option>-- Select a Course --</option>
+      <option *ngFor="let course of courses"
+        value="{{course['courseName']}}">{{course['courseName']}}</option>
+    </select>
+    <div class="btn btn-primary" (click)="getCourseQuestion(selectedCourse.value)">Get Questions</div>
+
+
+    <table class="table" *ngIf="favouriteQuestions.length != 0">
+      <thead>
+      <tr>
+        <th>Question</th>
+        <th>Topic Name</th>
+        <th># of Likes</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of favouriteQuestions">
+        <td scope="row">{{item['questionText']}}</td>
+        <td>{{item['topicName']}}</td>
+        <td>{{item['noOfLikes']}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

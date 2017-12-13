@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-12">
+    <br/>
+    Select a student:
+    <select class="custom-select" #student (change)="getUsersCourses($event.target.value)">
+      <option selected>-- Select --</option>
+      <option *ngFor="let student of listOfStudents" value="{{student['userID']}}">{{student['firstName']}}</option>
+    </select>
+    <hr/>
+    Select the student's course:
+    <select class="custom-select" #course (change)="getCourseMaterials(student.value, course.value)">
+      <option selected>-- Select --</option>
+      <option *ngFor="let item of listOfCourses" value="{{item['courseID']}}">{{item['courseName']}}</option>
+    </select>
+    <hr/>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Course ID</th>
+        <th>Material Name</th>
+        <th>Completed</th>
+        <th>Mark as completed</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of listofMaterials">
+        <td>{{course.value}} </td>
+        <td>{{item['materialName']}}</td>
+        <td>{{item['completed']}}</td>
+        <td>
+          <input type="checkbox"
+                 [attr.disabled]="item['completed'] == 'Yes'?'':null"
+                 [checked]="item['completed'] == 'Yes'"
+          (change)="finishMaterial(item['enrollmentID'], item['sequence'])">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

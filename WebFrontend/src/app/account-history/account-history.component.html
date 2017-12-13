@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-12">
+    <br/>
+    Select a student:
+    <select class="custom-select" #student (change)="getUserDetails(student.value)">
+      <option selected>-- Select --</option>
+      <option *ngFor="let student of listOfStudents" value="{{student['userID']}}">{{student['firstName']}}</option>
+    </select>
+    <hr/>
+
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Confirmation Code</th>
+          <th>Cost</th>
+          <th>Enrolled Time</th>
+          <th>Completed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of userDetails.completionInfoList">
+          <td>{{item["courseName"]}}</td>
+          <td>{{item["confirmationCode"]}}</td>
+          <td>{{item["courseCost"]}}</td>
+          <td>{{item["enrolledTime"]}}</td>
+          <td>{{item["isCompleted"]}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <b>Total Spent: </b><span>{{userDetails.totalSpent}}</span>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+<div class="col-12">
+  Select student to enroll
+  <br/>
+  <select class="custom-select" #student>
+    <option *ngFor="let student of listOfStudents" value="{{student['userID']}}">
+      {{student['firstName']}}
+    </option>
+  </select>
+  <br/>
+  Select course to enroll
+  <br/>
+  <select class="custom-select" #course>
+    <option *ngFor="let student of listOfCourses" value="{{student['courseID']}}">
+      {{student['courseName']}}
+    </option>
+  </select>
+  <br/>
+  <div class="btn btn-primary" (click)="enroll(student.value, course.value)">Enroll</div>
+</div>
+</div>

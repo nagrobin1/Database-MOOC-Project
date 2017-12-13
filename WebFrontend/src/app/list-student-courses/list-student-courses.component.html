@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-12">
+    <h2>List of Student's Courses</h2>
+
+    <hr/>
+
+    <div class="input-group">
+      <select class="custom-select" #StudentId>
+        <option *ngFor="let student of listofStudent" value="{{student['userID']}}">
+          {{student['firstName']}}&nbsp;{{student['lastName']}}
+        </option>
+      </select>
+      
+      <div class="input-group-btn">
+        <button (click)="getCourses(StudentId.value)"
+            class="btn btn-primary btn-add" type="button" data-target="tag-controls">Search</button>
+      </div>
+    </div>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Average Rating</th>
+            <th>Primary Topic</th>
+            <th>Secondary Topics</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of courseInfo">
+        <td scope="row">{{item['courseName']}}</td>
+        <td>{{item['avgRating']}}</td>
+        <td>{{item['primaryTopic']}}</td>
+        <td>{{item['secondaryTopics']}}</td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12">
+    <br/>
+    Select a student:
+    <select class="custom-select" #student (change)="getUsersCourses($event.target.value)">
+      <option selected>-- Select --</option>
+      <option *ngFor="let student of listOfStudents" value="{{student['userID']}}">{{student['firstName']}}</option>
+    </select>
+    <hr/>
+    Select the student's course:
+    <select class="custom-select" #course (change)="getCertificate(student.value, course.value)">
+      <option selected value="-1">-- Select --</option>
+      <option *ngFor="let item of listOfCourses" value="{{item['courseID']}}">{{item['courseName']}}</option>
+    </select>
+    <hr/>
+    <h2 *ngIf="course.value != -1" >Certified: {{isCertified == true ? "Yes" : "No"}}</h2>
+  </div>
+</div>

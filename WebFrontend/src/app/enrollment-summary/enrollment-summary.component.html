@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Course-Topic Enrollment Summary for a semester</h2>
+    <br/>
+    <select class="custom-select" #selectedTerm>
+      <option value="Fall" selected>Fall</option>
+      <option value="Spring">Spring</option>
+      <option value="Summer">Summer</option>
+    </select>
+    <div class="btn btn-primary" (click)="getEnrollmentSummary(selectedTerm.value)">Get Report</div>
+
+
+    <div *ngIf="coursetopicsummary.length != 0">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Topic Name</th>
+          <th>Course Name</th>
+          <!--<th>Secondary Topic</th>-->
+          <th>Enrollment Count</th>
+          <th>Total Cost</th>
+          <th>Completed Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of coursetopicsummary">
+          <td scope="row">{{item['topicName']}}</td>
+          <td>{{item['courseName']}}</td>
+          <!--<td>{{item['secondaryTopics']}}</td>-->
+          <td>{{item['enrolledCnt']}}</td>
+          <td>{{item['totalCost']}}</td>
+          <td>{{item['completedCnt']}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
